@@ -1,0 +1,129 @@
+/* 調整card-group的版面 */
+.card-group{
+    position:relative;
+    padding: 20px 0; /* 調整內距上下各20px */
+    width: 1300px;
+    display: flex;
+    flex-wrap: wrap; /* 自動換成多行 */
+    margin: auto; /* 水平置中 */
+    border-bottom: 1px dotted  #aaaaaa;
+    /* dotted 點線 */ 
+
+}
+.card-group, a{
+    text-decoration: none; 
+    /* 不要底線裝飾 */
+}
+
+.card-group a:hover{
+    background-color: #fffcdc;
+    transition: 0.3s;
+}
+.card-group a:hover .like{
+    display: block;
+    position: absolute;
+    /*對齊card-group position*/
+}
+.like{
+    display: none;
+    background-color: #414040;
+    opacity: 0.8;
+    width: 160px;
+    padding: 10px;   
+    margin-top: -50px;
+}
+
+.like img{
+    width: 25px; 
+    padding: 0 25px;
+}
+ 
+.like img:last-child{
+    float: right;
+}
+.card{     
+    width: 175px;
+    margin: 10px;
+    padding: 10px;         
+}
+#dotted{
+    color: #d8d8d8;
+    font-size: 20px;
+    text-align: auto;
+}
+    
+.title{ /* 標題 */
+    font-size: 15px;
+    color: #787878;
+    /*padding: 5px 0 20px 0; */
+    line-height:25px; /* 25px行高 */ 
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2; /*行數*/
+    -webkit-box-orient: vertical;
+
+}
+#memo{
+    margin: 8px 0;
+    font-size: 13px;
+    color:#e03434;
+}
+.price{
+    font-size: 22px;
+    color: #cb186b;
+    margin: 5px;
+}
+
+/* span 的大小及顏色 */
+.price span{
+    font-size: 12px;
+    color: #cb186b;
+}
+/* 選取第二個span */
+.price span:nth-child(2){
+    color: #949191;
+}
+
+.star span{ /* 星星數量（666) */
+    color: #aaa;
+    vertical-align: middle;
+}
+.star img{
+    margin-right: -7px;
+    width: 15px;
+}
+
+p3{
+    font-size: 13px;
+    color: #3d3c3c;
+}
+
+.btn{ /* 底部灰區塊 */
+    background-color:#ebe8e8;
+    margin: 7px 0;
+    padding: 7px;
+    text-align: right;
+    vertical-align: middle;
+}  
+.btn p{ /* 可訂購時請通知我 */
+    font-size: 13px ;
+    padding: 3px;
+    font-weight:bolder; /* 粗體 */
+    color: #999797;
+    text-align: center;
+    letter-spacing:0.5px /* 字距 */
+}
+.btn span{ /* 底部標籤 */
+    font-size: 12px ;
+    color: #fff;
+    padding: 2px 3px;
+    background-color: #f1509b;
+    border-radius: 5px;
+    vertical-align: middle;
+    
+} 
+#speed {
+    background-color: #d21414;
+}
+
