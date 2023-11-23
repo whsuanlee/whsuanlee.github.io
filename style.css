@@ -1,10 +1,4 @@
 /* 調整card-group的版面 */
-.{
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    justify-content: center;
-}
 .card-group{
     position:relative;
     padding: 20px 0; /* 調整內距上下各20px */
@@ -152,6 +146,7 @@ p3{
     padding: 7px;
     text-align: right;
     vertical-align: middle;
+    width: 167px;
 }  
 .btn p{ /* 可訂購時請通知我 */
     font-size: 13px ;
