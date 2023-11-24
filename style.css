@@ -1,10 +1,12 @@
 /* 調整card-group的版面 */
 .wrap{
-    margin: auto;
+    margin:auto;
+
 }
 .card-group{
     position:relative;
-    padding: 20px 0; /* 調整內距上下各20px */
+    padding: 20px 0px 10px 40px ;
+    /* 調整內距*/
     width: 1300px;
     display: flex;
     flex-wrap: wrap; /* 自動換成多行 */
@@ -92,7 +94,7 @@
 .card{     
     width: 175px;
     margin: 10px;
-    padding: 10px 10px 10px 5px; 
+    padding: 5px 10px 5px 5px
           
 }
 
@@ -146,7 +148,7 @@ p3{
 
 .btn{ /* 底部灰區塊 */
     background-color:#ebe8e8;
-    margin: 7px 0;
+    margin: 7px 0 5px 0;
     padding: 7px;
     text-align: right;
     vertical-align: middle;
