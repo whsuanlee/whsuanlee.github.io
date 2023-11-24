@@ -1,4 +1,7 @@
 /* 調整card-group的版面 */
+.wrap{
+    margin: auto;
+}
 .card-group{
     position:relative;
     padding: 20px 0; /* 調整內距上下各20px */
@@ -89,7 +92,8 @@
 .card{     
     width: 175px;
     margin: 10px;
-    padding: 10px;         
+    padding: 10px 10px 10px 5px; 
+          
 }
 
     
@@ -111,14 +115,14 @@
     color:#e03434;
 }
 .price{
-    font-size: 22px;
+    font-size: 24px;
     color: #cb186b;
-    margin: 5px;
+    margin: 20px 10px 10px 10px;
 }
 
 /* span 的大小及顏色 */
 .price span{
-    font-size: 12px;
+    font-size: 14px;
     color: #cb186b;
 }
 /* 選取第二個span */
