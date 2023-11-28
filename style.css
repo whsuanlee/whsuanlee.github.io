@@ -26,7 +26,7 @@
     padding: 6px 0;
     background-color: #ffffff; 
     margin: auto;
-    padding-left: 3%; /*內距左13％ 為何不能置中？ */
+    padding-left: 4%; /*內距左13％ 為何不能置中？ */
     position : sticky;   
     top : 66px; /* 定位在最上層 */
     /* outline: 2px solid red; */
