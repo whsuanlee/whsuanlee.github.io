@@ -23,29 +23,30 @@
 
 .header2{
     display: flex;
-    padding: 6px 0;
+    /* padding: 6px 0; */
     background-color: #ffffff; 
-    margin: auto;
-    padding-left: 3%; /*內距左13％ 為何不能置中？ */
+    /* margin: auto; */
     position : sticky;   
     top : 66px; /* 定位在最上層 */
     /* outline: 2px solid red; */
     box-shadow: 0 3px 4px -5px;
-
-
 }
-.header2 nav{
-    width: 100%;    
+.alink{
+    display: flex;
+    margin: auto;
+}
+.alink nav{
+    /* width: 100%;     */
     font-size: 0; /*超連結之間不要有空隙*/
-    padding: 10px;
+    /* padding: 10px; */
     margin: auto;
     
 }
-.header2 .logo{
+.alink .logo{
     display: inline-block;
     padding: 10px;
 }
-.header2 nav a{
+.alink nav a{
     display: inline-block;
     line-height: 50px;/*配合logo高度*/
     font-size: 20px;/*由這裡設定超連結文字大小*/
@@ -54,7 +55,7 @@
     color: #242424;
     position: relative;
 }
-.header2 nav a:not(:last-child):after{
+.alink nav a:not(:last-child):after{
     content: '';
     position: absolute;
     left: 50%; /*左右各半*/
@@ -66,23 +67,24 @@
         }
 
 
-.header2 nav a:hover:after{
+.alink nav a:hover:after{
     left:0; 
     right:0;
     /*左右距離為0，底線會從「無」延伸到「全長」*/
 
 }
-.header2 nav a:last-child{
+.alink  nav a:last-child{
     background-color:  rgb(53, 96, 252); 
     color: #fff;
     border-radius: 10px;
     padding: 5px 50px;
     margin-left: 20px;
 }
-.header2 nav a:hover:last-child{
+.alink  nav a:hover:last-child{
     background-color: #0b0b43; 
     transition-duration: .7s; /*動畫時間0.7秒*/
 }
+
 /* about */
 .about{
     background-color: #efefef;
@@ -166,7 +168,7 @@
     list-style: none; /*去除清單項目樣式*/
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     font-weight: 450;
     margin: 0 0 -8px;
     width: 600px;
