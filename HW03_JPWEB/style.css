@@ -4,12 +4,13 @@
     padding: 0;
 }
 .card-group {   
-    width: 1440px;
+    width: 1200px;
     margin: auto;
     border-bottom: 1px solid #000;
     padding: 30px 0 50px 0;
-
 }
+
+
 /* card-title標題 */
 .card-title{
     display: flex;
@@ -53,7 +54,7 @@
     display: flex;
     gap: 30px;
 }
-.card:nth-child(even){
+.card-group:nth-child(even) .card{
     flex-direction: row-reverse;
 }
 
