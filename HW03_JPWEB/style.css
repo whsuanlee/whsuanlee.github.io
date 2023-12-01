@@ -1,0 +1,123 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.card-group {   
+    width: 1440px;
+    margin: auto;
+    border-bottom: 1px solid #000;
+    padding: 30px 0 50px 0;
+
+}
+/* card-title標題 */
+.card-title{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    width: 100%;
+    margin: 50px 0;
+}
+.card-title h2{
+    font-size: 30px;
+    display: inline-block;
+}
+.card-title span{
+    font-size: 16px;
+    color: #9b9b9b; 
+    padding-left: 10px; 
+}
+.card-title a{  
+    position: relative;
+    text-decoration: none;
+    color: rgb(255, 93, 93);
+    padding-right: 30px;
+}
+.card-title a::after{
+    position: absolute;
+    content: '→';
+    color: rgb(255, 93, 93);
+    text-align: center;
+    padding: 0 3px;
+    border: 2px solid rgb(255, 93, 93);
+    border-radius: 100%;
+    margin-left: 5px;
+}
+.card-title a:hover{
+    color: rgb(255, 132, 132);
+}
+
+
+/* card整區卡片 */
+.card{
+    display: flex;
+    gap: 30px;
+}
+.card:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+/* big-pic大圖區域 */
+.big-pic{
+    width: 45%;
+    text-decoration: none;
+    color: inherit; /*繼承body的顏色*/
+}
+.card .big-pic:hover,
+.small-post:hover{
+    background-color: #fff;
+    opacity: .7;
+    transition: .5s;  
+}
+.big-pic img,
+.small-post img{
+    width: 100%;
+    border-radius: 20px;
+}
+.text{
+    display: flex; 
+    margin-top: 20px; 
+    gap: 20px;
+}
+.text h3{
+    width: 1200px;
+    font-size: 30px;   
+}
+.big-pic-text,
+.small-pic .small-post{
+    display: flex;
+    flex-direction:column;   
+}
+.text p{
+    font-weight: 345;
+    letter-spacing: 1px;
+    flex-grow: 1;
+}
+.big-pic span, 
+.small-post span{
+    font-size: 16px;
+    color: #9b9b9b;
+    display: inline-block;
+    margin-bottom: 10px;   
+}
+.big-pic .big-pic-text span{
+    margin-bottom: 0;
+}
+
+.small-post{
+    text-decoration: none;
+    color: inherit; /*繼承body的顏色*/
+}
+ 
+
+/* small-pic小圖區域 */
+.small-pic{   
+    display: grid;
+    grid-template-columns:1fr 1fr; /*分二欄*/
+    gap:30px; /*內距收縮30px*/
+}
+
+.small-pic .small-post h3{
+    margin-top: 20px;
+    flex-grow: 1;
+}
