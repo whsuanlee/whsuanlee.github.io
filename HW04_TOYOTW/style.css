@@ -3,14 +3,14 @@
     padding: 0;
     list-style: none;
 }
+img{
+    vertical-align: middle;
+}
 .wrap{
     position: relative;
     margin: 50px auto;
     width: 960px;
-    outline: 2px solid red;
-}
-.wrap:nth-child(even){
-
+    /* outline: 2px solid red; */
 }
 /* chapter start */
 .chapter{  
@@ -19,11 +19,35 @@
     align-items: center;
     z-index: 3;
 }
+.wrap:nth-child(even) .chapter{
+    /* outline: 2px solid blue; */
+    position: relative;
+    left: 660px;
+}
+.wrap:nth-child(even) .pic img{
+    padding-left: 29px;
+    /* outline: 2px solid blue; */
+}
+.wrap:nth-child(even) .pic::after{
+    /* outline: 2px solid blue; */
+    left: 460px;
+}
+.wrap:nth-child(even) .icon a{
+    left: 0px;
+}
+.wrap:nth-child(even) .list{
+    left: 230px;
+}
+.wrap:nth-child(even) .title{
+    flex-direction: row-reverse;
+}
+.wrap:nth-child(even) .title h2{
+    margin-right: 20px;
+} 
 .chapter .title{
     display: flex;
     background-color: #9f0000;
     align-items: center;
-
 }
 .wrap .chapter .title h2{
     font-size: 40px;
@@ -34,8 +58,6 @@
     /* 文字垂直 */
     writing-mode: vertical-rl; 
     font-size: 100px;
-    vertical-align: middle;
-    /* margin-left: -30px; */
     line-height: 0.8;
     
 }
@@ -109,8 +131,10 @@
     bottom: 330px;
     z-index: -1;  
 }
+
 .pic img{
     padding-left: 150px;
+    
 }
 /* pic end */
 
