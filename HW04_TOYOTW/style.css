@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.wrap{
+    position: relative;
+    margin: 50px auto;
+    width: 960px;
+    outline: 2px solid red;
+}
+.wrap:nth-child(even){
+
+}
+/* chapter start */
+.chapter{  
+    color:#fff;
+    width: 300px;
+    align-items: center;
+    z-index: 3;
+}
+.chapter .title{
+    display: flex;
+    background-color: #9f0000;
+    align-items: center;
+
+}
+.wrap .chapter .title h2{
+    font-size: 40px;
+    margin-left: 20px;
+    letter-spacing: 3px;
+}
+.chapter .title span{
+    /* 文字垂直 */
+    writing-mode: vertical-rl; 
+    font-size: 100px;
+    vertical-align: middle;
+    /* margin-left: -30px; */
+    line-height: 0.8;
+    
+}
+.content{
+    background-color: #000;
+    padding: 10px;
+    line-height: 1.5;
+    letter-spacing: 3px;   
+}
+/* chapter end */
+
+/* list start */
+.list{
+    background-color: #ececec;
+    width: 700px;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    left: 50px;
+    bottom: 267px;
+    z-index: 3;
+}
+.list h4{
+    color: #9f0000;
+    position: relative;
+}
+.list h4::after{
+    content: '';
+    position: absolute; 
+    color: #9f0000;
+    border: 1px solid #9f0000;
+    width: 520px;
+    top: 10px;
+    left: 170px;  
+}
+.list li:nth-child(odd){
+    background-color: #000;
+    color: #fff;
+    width: 100px;
+    margin: 10px 0;
+    padding: 0 10px;   
+}
+.list li:nth-child(even){
+    /* 縮排 */
+    text-indent: -10px; 
+    padding-left: 10px;
+
+}
+.list li:nth-child(even)::before{   
+    content: '▪︎';
+    color: #9f0000;
+    list-style-position: inside;
+    padding-right: 3px;    
+}
+/* list end */
+
+/* pic start */
+.pic{
+    position: relative;
+    width: 100%;
+    /* left: 150px; */
+    bottom: 169px;
+    z-index: -1;
+}
+.pic::after{
+    position: relative;
+    content: '';   
+    border: 180px solid #dedcdc;
+    opacity: .3;
+    left: 600px;
+    bottom: 330px;
+    z-index: -1;  
+}
+.pic img{
+    padding-left: 150px;
+}
+/* pic end */
+
+/* icon start */
+.icon a{
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    background-color: #9f0000;
+    width: 60px;
+    height: 40px;
+    text-align: center; 
+    bottom: 200px;
+    left: 820px;
+    z-index: 5; 
+}
+.icon a::before{   
+    content: '►';
+    width: 100px;
+    color: #fff;
+    font-size: 30px; 
+    
+    
+    
+}
+/* icon end */
