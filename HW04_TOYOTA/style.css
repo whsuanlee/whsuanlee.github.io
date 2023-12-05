@@ -20,31 +20,7 @@ img{
     align-items: center;
     z-index: 3;
 }
-.wrap:nth-child(even) .chapter{
-    /* outline: 2px solid blue; */
-    position: relative;
-    left: 660px;
-}
-.wrap:nth-child(even) .pic img{
-    padding-left: 29px;
-    /* outline: 2px solid blue; */
-}
-.wrap:nth-child(even) .pic::after{
-    /* outline: 2px solid blue; */
-    left: 460px;
-}
-.wrap:nth-child(even) .icon a{
-    left: 0px;
-}
-.wrap:nth-child(even) .list{
-    left: 230px;
-}
-.wrap:nth-child(even) .title{
-    flex-direction: row-reverse;
-}
-.wrap:nth-child(even) .title h2{
-    margin-right: 20px;
-} 
+
 .chapter .title{
     display: flex;
     background-color: #9f0000;
@@ -59,8 +35,7 @@ img{
     /* 文字垂直 */
     writing-mode: vertical-rl; 
     font-size: 100px;
-    line-height: 0.8;
-    
+    line-height: 0.8;   
 }
 .content{
     position: absolute;
@@ -107,7 +82,6 @@ img{
     /* 縮排 */
     text-indent: -10px; 
     padding-left: 10px;
-
 }
 .list li:nth-child(even)::before{   
     content: '▪︎';
@@ -134,7 +108,6 @@ img{
     bottom: 330px;
     z-index: -1;  
 }
-
 .pic img{
     padding-left: 150px;
     
@@ -158,9 +131,33 @@ img{
     content: '►';
     width: 100px;
     color: #fff;
-    font-size: 30px; 
-    
-    
-    
+    font-size: 30px;    
 }
 /* icon end */
+
+/* even */
+.wrap:nth-child(even) .chapter{
+    /* outline: 2px solid blue; */
+    position: relative;
+    left: 660px;
+}
+.wrap:nth-child(even) .pic img{
+    padding-left: 29px;
+    /* outline: 2px solid blue; */
+}
+.wrap:nth-child(even) .pic::after{
+    /* outline: 2px solid blue; */
+    left: 460px;
+}
+.wrap:nth-child(even) .icon a{
+    left: 0px;
+}
+.wrap:nth-child(even) .list{
+    left: 230px;
+}
+.wrap:nth-child(even) .title{
+    flex-direction: row-reverse;
+}
+.wrap:nth-child(even) .title h2{
+    margin-right: 20px;
+} 
