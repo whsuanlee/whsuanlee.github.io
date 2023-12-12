@@ -813,7 +813,6 @@ nav span a:hover {
     position: absolute;
     top: 5566px;
     left: 0;
-    z-index: -1;
 }
 
 .label-bg {
@@ -829,7 +828,7 @@ nav span a:hover {
     left: 0;
 }
 
-.subcribe-bg {
+.subscribe-bg {
     position: absolute;
     top: 7011px;
     right: 60px;
