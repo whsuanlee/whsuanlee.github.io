@@ -54,21 +54,25 @@ img{
     padding: 10px;
     position: relative;
     left: 50px;
-    bottom: 97px;
+    bottom: 71px;
     z-index: 3;
 }
 .list h4{
     color: #9f0000;
-    position: relative;
+    /* position: relative; */
+    display: flex;
+    align-items: center;
 }
 .list h4::after{
     content: '';
-    position: absolute; 
+    /* position: absolute;  */
     color: #9f0000;
-    border: 1px solid #9f0000;
-    width: 520px;
-    top: 14px;
-    left: 170px;  
+    border-top: 1px solid #9f0000;
+    margin-left: .5em;
+    /* width: 520px; */    
+    /* top: 14px; */
+    /* left: 170px;  */
+    flex-grow: 1; 
 }
 .list li:nth-child(odd){
     background-color: #000;
@@ -100,12 +104,15 @@ img{
     
 }
 .pic::after{
-    position: relative;
-    content: '';   
+    position: absolute;
+    content: ''; 
+    /* display: block; 
+    width: 500px;
+    height: 100px;  */
     border: 180px solid #dedcdc;
     opacity: .3;
     left: 600px;
-    bottom: 330px;
+    bottom: 145px;
     z-index: -1;  
 }
 .pic img{

@@ -398,7 +398,21 @@
                 </article></a>
             </section>
         </div>
-    
+    <script>
+        const cardElements = document.querySelectorAll('.card');
+        cardElements.forEach((card,index) => {
+            const cardIndex = card.querySelectorAll('card-index');   
+            const title = card.querySelector('.title').textContent;
+            const price = card.querySelector('.price').textContent;
+            // const img = card.querySelector('.card').getAttribute('src');
+            console.log(cardIndex)
+            console.log(title)
+            console.log(price)
+            console.log
+        })
+        
+        
+    </script>
 
 </body>
 </html>
