@@ -796,6 +796,22 @@ nav span a:hover {
 /* footer end */
 
 
+/* top start */
+.top {
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    z-index: 99;
+}
+
+.top a {
+    font-size: 30px;
+    text-decoration: none;
+    color: rgb(18, 222, 66);
+}
+/* top end */
+
+
 /* bg */
 .step-top-bg {
     position: absolute;
