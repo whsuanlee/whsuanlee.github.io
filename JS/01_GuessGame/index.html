@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小資存錢術</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="JS.js"></script>
+    
     <!-- 小資存錢術  猜猜小資還要存多少美金才能有第一桶金呢？ -->
     <div class="wrap">
         <div class="title">
@@ -19,34 +20,44 @@
                 <div class="calculator-model">
                     <input type="text" class="input-guess" readonly value=""/>
                     <p class="result">請輸入1~100之間的數字</p>
-                    <div class="number-btn">
-                        <div class="input-num">7</div>
-                        <div class="input-num">8</div>
-                        <div class="input-num">9</div>
-                        <div class="input-num">4</div>
-                        <div class="input-num">5</div>
-                        <div class="input-num">6</div>
-                        <div class="input-num">1</div>
-                        <div class="input-num">2</div>
-                        <div class="input-num">3</div>
-                        <div class="input-num">0</div>
-                        <div class="input-num submit">Submit</div>
-                        <div class="input-num again">Again</div> 
+                    <div class="btn-group">
+                        <div class="number-btn">
+                            <div id="input-num-7" class="input-num">7</div>
+                            <div id="input-num-8" class="input-num">8</div>
+                            <div id="input-num-9" class="input-num">9</div>
+                            <div id="input-num-4" class="input-num">4</div>
+                            <div id="input-num-5" class="input-num">5</div>
+                            <div id="input-num-6" class="input-num">6</div>
+                            <div id="input-num-1" class="input-num">1</div>
+                            <div id="input-num-2" class="input-num">2</div>
+                            <div id="input-num-3" class="input-num">3</div>
+                            <div id="input-num-0" class="input-num" readonly value="">0</div>
+                            <div class="input-num submit">確定</div>
+                            <div class="input-num clear">清除</div> 
+                        </div>
+                        <div class="system-btn">
+                            <div id="input-ans" class="input-num ans">看答案</div>
+                            <div id="input-again" class="input-num again">再玩一次</div>
                     </div>
                 </div>
             </div>
             <div class="pic-piggy">
                 <div class="pic-piggy-start">
-                    <img src="./IMG/eat_00000.png" alt="">
+                    <img src="./IMG/eat_start.png" alt="">
                 </div>
                 <div class="pic-piggy-eat">
-                    <img src="./IMG/eat.gif" alt="">
+                    <img src="./IMG/eat.gif" alt="" style="display: block;" >
                 </div>
                 <div class="pic-piggy-full">
-                    <img src="./IMG/full.gif" alt="">
+                    <img src="./IMG/full.gif" alt="" style="display: block;" >
+                </div>
+                <div class="pic-piggy-end">
+                    <img src="./IMG/full_end.png" alt="" style="display: block;" >
                 </div>
             </div>
         </section>
     </div>
+
+    <script src="JS.js"></script>
 </body>
 </html>

@@ -48,8 +48,8 @@ img {
 
 .calculator-model {
     width: 300px;
-    background-color: #9a9898;
-    border: 7px solid rgb(7, 7, 92);
+    background-color: #000000;
+    box-shadow: 00px 0px 5px 0px #000;
     border-radius: 50px;
     padding: 40px 20px 20px 20px;
 }
@@ -78,8 +78,6 @@ img {
 .number-btn {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: 20px;
-    padding-left: 10px;
     text-align: center;
 
 }
@@ -103,14 +101,48 @@ img {
 
 .input-num:hover {
     background-color: rgb(219, 219, 219);
-
+    box-shadow: 00px 0px 5px 0px rgb(164, 163, 163);
     color: #606060;
     transition: .5s;
     
 }
 
-.submit, .again {
-    font-size: 14px;
+.btn-group {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+.ans, .again {
+    border-radius: 10px;
+    letter-spacing: 3px;
+    writing-mode: vertical-lr;
+    height: 127px;
+    background-color: #6f1b1b;  
+    box-shadow: 0 0 5px 0 #3b0d0d;                                                      
+}
+
+.ans:hover, .again:hover {
+    color: #fff;
+    background-color: #d35d5d; 
+    box-shadow: 00px 0px 5px 0px #ec7878;
+}
+
+.ans {
+    margin-bottom: 15px;
+}
+
+.submit, .clear {
+    letter-spacing: 2px;
+    background-color: rgb(231, 148, 5);
+    box-shadow: 00px 0px 5px 0px  rgb(231, 148, 5);
+}
+
+.submit:hover, .clear:hover {
+    background-color: rgb(255, 200, 104);
+    box-shadow: 00px 0px 5px 0px  rgb(247, 191, 93);
+    
 }
 /* calculator end */
 
@@ -124,9 +156,10 @@ img {
 
 .pic-piggy-start,
 .pic-piggy-eat,
-.pic-piggy-full {
+.pic-piggy-full,
+.pic-piggy-end {
     position: absolute;
-    top: 405px;
-    right: -420px;
+    bottom: 0;
+    right: -828px;
 }
 /* pic-piggy end */
