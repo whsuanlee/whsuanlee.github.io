@@ -55,12 +55,14 @@ img {
 }
 
 .input-guess {
+    box-sizing: border-box;
     background-color: #4e4d4d;
     font-size: 25px;
     color: #fff;
     border-radius: 10px;
     margin-bottom: 20px;
     padding: 20px;
+    width: 100%;
 }
 
 .result {
