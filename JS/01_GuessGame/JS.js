@@ -117,7 +117,7 @@ else if (guessValue === answer && guessValue >= minNum && guessValue <= maxNum){
     }, 1850);
 }
 else {
-    alert(`请输入 ${minNum} ～ ${maxNum} 之間的數字！`);
+    alert(`請输入 ${minNum} ～ ${maxNum} 之間的數字！`);
     inputGuess.value = "";
 }
 })
