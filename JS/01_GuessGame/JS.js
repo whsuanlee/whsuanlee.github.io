@@ -71,7 +71,6 @@ if (guessValue < answer && guessValue >= minNum && guessValue <= maxNum) {
     inputGuess.value = "";
 
     piggyStart.style.display = 'none';
-    piggyEat.src='./IMG/eat.gif';
     piggyEat.style.display = 'block';
     piggyFull.style.display = 'none';
     piggyEnd.style.display = 'none';
@@ -90,7 +89,6 @@ else if (guessValue > answer && guessValue >= minNum && guessValue <= maxNum){
     inputGuess.value = "";
 
     piggyStart.style.display = 'none';
-    piggyEat.src='./IMG/eat.gif';
     piggyEat.style.display = 'block';
     piggyFull.style.display = 'none';
     piggyEnd.style.display = 'none';
@@ -108,7 +106,6 @@ else if (guessValue === answer && guessValue >= minNum && guessValue <= maxNum){
 
     piggyStart.style.display = 'none';
     piggyEat.style.display = 'none';
-    piggyFull.src = './IMG/full.gif';
     piggyFull.style.display = 'block';
     piggyEnd.style.display = 'none';
 
