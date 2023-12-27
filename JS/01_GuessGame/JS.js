@@ -115,6 +115,7 @@ else if (guessValue === answer && guessValue >= minNum && guessValue <= maxNum){
         piggyFull.style.display = 'none';
         piggyEnd.style.display = 'block';
     }, 1850);
+
 }
 else {
     alert(`請输入 ${minNum} ～ ${maxNum} 之間的數字！`);

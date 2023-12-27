@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.wrap {
+    width: 960px;
+    margin: auto;
+}
+
+.btn-group {
+    margin: 20px 0;
+}
+
+.input-group {
+    margin: 20px 0;
+}
+
+.custom-input-text {
+    background-color: #ffc107;
+    color: white; 
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px 0 0 5px;
+}
+
+.input-group input {
+    border-color: #ffc107;
+}
+
+.input-group input::placeholder {
+        color: #cbcbcb;
+    }
+
+.list-group li {
+    border-color: #ffc107;
+}
+

@@ -1,0 +1,33 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1A2B</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="btn-group d-flex" role="group" aria-label="Basic outlined example">
+        <button type="button" class="btn btn-outline-warning" id="startBtn">開始</button>
+        <button type="button" class="btn btn-outline-warning" id="restartBtn">重新開始</button>
+        <button type="button" class="btn btn-outline-warning" id="showAnswerBtn">看答案</button>
+        <!-- btn-outline-primary外框為藍色  btn-outline-warning外框為橘色  btn-outline-secondary外框為灰色 -->
+      </div>
+
+      <ul class="list-group" id="historyList">
+        <li class="list-group-item disabled" aria-disabled="true">歷程</li>
+      </ul>
+
+      <div class="input-group mb-3">
+        <span class="custom-input-text">猜答案</span>
+        <input type="text" class="form-control" placeholder="請輸入四個不重複的數字" aria-label="Recipient's username" aria-describedby="guessButton">
+        <button class="btn btn-outline-warning" type="button" id="guessButton">確定</button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="js.js"></script>
