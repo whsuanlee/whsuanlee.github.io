@@ -8,6 +8,12 @@
     margin: auto;
 }
 
+.wrap h1 {
+    color: #ffbd30;
+    text-align: center;
+    padding: 30px 0 10px 0;
+}
+
 .btn-group {
     margin: 20px 0;
 }
@@ -36,3 +42,10 @@
     border-color: #ffc107;
 }
 
+.result {
+    color: #fff;
+    background-color: #ffbd30;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 10px 0 0;
+}
