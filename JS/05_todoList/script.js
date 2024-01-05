@@ -1,18 +1,22 @@
-// 從 localStorage 中獲取 todos，如果為空則設置為空陣列
+// 從localStorage中取得待辦事項，若沒有則初始化為空陣列
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
-// render待辦事項列表
+// 取得 DOM 元素
+const input = document.querySelector('.todo'); // 輸入待辦事項的欄位
+const newListButton = document.querySelector('.newList'); // 新增待辦事項按鈕
+const resetButton = document.querySelector('.reset'); // reset待辦事項按鈕
+const listContainer = document.querySelector('.list'); // 待辦事項列表的容器
+
+// render待辦事項列表的函式
 const renderTodos = () => {
-  const listContainer = document.querySelector('.list');
   listContainer.innerHTML = ''; // 清空列表
 
-  // 迭代 todos 陣列
+  // 迭代待辦事項陣列，將每個待辦事項render成對應的HTML元素
   todos.forEach((todo, index) => {
-    // 創建待辦事項項目的 HTML 元素
+    // 創建待辦事項的HTML元素
     const todoItem = document.createElement('div');
     todoItem.classList.add('input-group', 'mb-3');
 
-    // 創建勾選框的 HTML 元素
     const checkBoxDiv = document.createElement('div');
     checkBoxDiv.classList.add('input-group-text', 'check');
 
@@ -21,6 +25,7 @@ const renderTodos = () => {
     checkBox.type = 'checkbox';
     checkBox.checked = todo.completed; // 根據待辦事項完成狀態設置勾選狀態
     checkBox.addEventListener('change', () => {
+      // 更新待辦事項完成狀態，並重新render至列表
       todos[index].completed = checkBox.checked;
       saveTodos();
       renderTodos();
@@ -28,77 +33,73 @@ const renderTodos = () => {
 
     checkBoxDiv.append(checkBox);
 
-    // 創建輸入框的 HTML 元素
     const todoInput = document.createElement('input');
     todoInput.classList.add('form-control');
     todoInput.type = 'text';
     todoInput.value = todo.text;
     todoInput.disabled = true; // 預設禁用編輯
 
-    // 創建編輯按鈕的 HTML 元素
     const editButton = document.createElement('button');
     editButton.classList.add('btn', 'btn-danger'); // 編輯按鈕紅色
     editButton.textContent = '編輯';
     editButton.addEventListener('click', () => {
+      // 根據按鈕狀態切換待辦事項的編輯狀態
       if (editButton.textContent === '編輯') {
-        // 啟用編輯
-        todoInput.disabled = false;
+        todoInput.disabled = false; //可編輯
         editButton.textContent = '保存';
         editButton.classList.remove('btn-danger');
         editButton.classList.add('btn-warning'); // 保存按鈕黃色
       } else {
-        // 停止編輯
         todoInput.disabled = true;
         editButton.textContent = '編輯';
         editButton.classList.remove('btn-warning');
-        editButton.classList.add('btn-danger');
+        editButton.classList.add('btn-danger'); //改為按鈕紅色
         todos[index].text = todoInput.value;
         saveTodos();
         renderTodos();
       }
     });
 
-    // 創建刪除按鈕的 HTML 元素
     const delButton = document.createElement('button');
     delButton.classList.add('btn', 'btn-secondary');
     delButton.textContent = '刪除';
     delButton.addEventListener('click', () => {
-      // 刪除index索引的1個元素-待辦事項
+      // 刪除待辦事項(索引值,刪除1個元素)，並重新render列表
       todos.splice(index, 1);
       saveTodos();
       renderTodos();
     });
 
-    // 將創建的 HTML 元素添加到待辦事項項目中
+    // 將各個元素添加至代辦事項容器
     todoItem.append(checkBoxDiv);
     todoItem.append(todoInput);
     todoItem.append(editButton);
     todoItem.append(delButton);
 
-    // 將待辦事項項目添加到列表容器中
     listContainer.append(todoItem);
   });
 };
 
-// 保存 todos 到 localStorage
+// 將待辦事項儲存至localStorage的函式
 const saveTodos = () => {
   localStorage.setItem('todos', JSON.stringify(todos));
 };
 
-// 新增代辦事項
-document.querySelector('.newList').addEventListener('click', () => {
-  const input = document.querySelector('.todo');
+// 新增待辦事項監聽事件
+newListButton.addEventListener('click', () => {
   const todoText = input.value.trim();
   if (todoText !== '') {
-    todos.push({ text: todoText, completed: false }); // 預設未完成
+    // 新增待辦事項至陣列，並重render列表
+    todos.push({ text: todoText, completed: false }); //預設沒勾選
     saveTodos();
     input.value = ''; // 清空輸入欄
     renderTodos();
   }
 });
 
-// 重置代辦事項列表
-document.querySelector('.reset').addEventListener('click', () => {
+// 重置待辦事項列表監聽事件
+resetButton.addEventListener('click', () => {
+  // 清除localStorage中的待辦事項，並重新render列表
   localStorage.removeItem('todos');
   todos = [];
   renderTodos();
