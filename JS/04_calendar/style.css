@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.wrap {
+    width: 1200px;
+    margin: auto;
+}
+
+.calendar {
+    margin: 50px 0;
+    height: 1150px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 1px 1px 9px 4px #e9e7e7
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.title {
+    display: flex;
+    margin-left: 50px;
+    margin-top: 50px;
+    height: 50px;
+    align-items: center;
+}
+
+.last-month {
+    margin-right: 10px;
+    margin-top: 42px;
+}
+
+.next-month {
+    margin-top: 42px;
+}
+
+.month {
+    width: 400px;
+    padding: 0 20px;
+    color: #8d8d8d;
+}
+
+.month span {
+    font-size: 100px;
+    color: #585858;
+}
+
+.year {
+    margin-right: 50px;
+    background-color: #f6cad5;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+}
+
+.year-txt {
+    margin: 50px 0;
+    color: #373636;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.main {
+    margin: 30px 50px 50px 50px;
+    background-color: #e8e8e8;
+}
+
+.main li {
+    width: 14.28285714%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.main ul {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap; 
+    padding-left: 0;  
+}
+
+.week-list li {
+    border: 2px solid #fff;
+    padding: 5px 0;
+}
+
+.week-list li:nth-of-type(1),
+.week-list li:nth-of-type(7) {
+   background-color: #f6cad5;
+}
+
+.day-list {
+    margin-top: -16px;
+}
+.days li {
+    height: 150px;
+    border: 2px solid #fff;
+    padding-top: 10px;
+}
+
+.today {
+    color: #fe94af;
+    font-weight: 900;
+}
+
+.add-icon {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #373636;
+    width: 70px;
+    height: 70px;
+    right: 22px;
+    bottom: 10px;
+    z-index: 99;  
+    float: right;
+    position: fixed;
+    font-size: 50px;
+    padding: 10px 20px 20px 18px;
+}
