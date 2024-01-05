@@ -1,7 +1,7 @@
 // 從localStorage中取得待辦事項，若沒有則初始化為空陣列
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
-// 取得 DOM 元素
+// 取得DOM元素
 const input = document.querySelector('.todo'); // 輸入待辦事項的欄位
 const newListButton = document.querySelector('.newList'); // 新增待辦事項按鈕
 const resetButton = document.querySelector('.reset'); // reset待辦事項按鈕
