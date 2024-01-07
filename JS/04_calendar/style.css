@@ -30,13 +30,21 @@
     align-items: center;
 }
 
+.header-button {
+    margin-top: 8px;
+}
+.today-month {
+    margin-left: 4px;
+    padding-top: 10px;      
+}
+
 .last-month {
     margin-right: 10px;
-    margin-top: 42px;
+    margin-top: 7px;
 }
 
 .next-month {
-    margin-top: 42px;
+    margin-top: 7px;
 }
 
 .month {
@@ -102,9 +110,22 @@
     padding-top: 10px;
 }
 
-.today {
-    color: #fe94af;
-    font-weight: 900;
+/* .days li:hover {
+    background-color: #efebeb;
+} */
+
+.today .date-num {
+    color: #fff;
+    /* font-weight: 900; */
+    background-color: #ff9eb6;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin: auto;
+
 }
 
 .add-icon {

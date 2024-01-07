@@ -1,4 +1,4 @@
-// 從localStorage中取得待辦事項，若沒有則初始化為空陣列
+// 從localStorage（todos）中取得待辦事項，若沒有則初始化為空陣列
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
 // 取得DOM元素

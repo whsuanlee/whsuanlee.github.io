@@ -12,9 +12,13 @@
         <div class="calendar">
             <div class="header">
                 <div class="title">
+                  <div class="header-button">
+                    <div class="bottom"></div>
+                    <button type="button" class="btn btn-outline-secondary  today-month"> TODAY </button>
                     <div class="bottom"></div>
                     <button type="button" class="btn btn-outline-secondary rounded-circle last-month"> < </button>
                     <button type="button" class="btn btn-outline-secondary rounded-circle next-month"> > </button>
+                  </div>
                     <h1 class="month"> 
                         <span>01</span> JANUARY </h1>                  
                 </div>
@@ -38,9 +42,13 @@
                 </div>
                 <div class="day-list">
                     <ul class="days">
+                      <li class="day">1</li>
                     </ul>
                 </div>
-                
+                 <!-- 待辦事項彈出視窗 -->
+                <div class="modal fade" id="eventModal" tabindex="-1">
+                  <!-- 這裡放置待辦事項的彈出視窗 HTML 結構 -->
+                </div>
             </div>
         </div>
     </div>

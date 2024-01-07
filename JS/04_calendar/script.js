@@ -3,8 +3,17 @@ const daysList = document.querySelector('.days');
 const lastMonthBtn = document.querySelector('.last-month');
 const nextMonthBtn = document.querySelector('.next-month');
 const yearElement = document.querySelector('.year-txt');
+const todayMonthBtn = document.querySelector('.today-month');
 
 let currentDate = new Date(); 
+
+todayMonthBtn.addEventListener('click', goToCurrentMonth);
+
+function goToCurrentMonth() {
+    currentDate = new Date(); // 將 currentDate 設置為當前日期
+    renderCalendar(); // 重新顯示日曆
+}
+
 
 function renderCalendar() {
     const year = currentDate.getFullYear();
@@ -23,6 +32,7 @@ function renderCalendar() {
 
     daysList.innerHTML = '';
 
+    const today = new Date(); // 取得今天日期
     for (let i = 0; i < firstWeekDay; i++) {
         const emptyDayElement = document.createElement('li');
         emptyDayElement.textContent = '';
@@ -31,8 +41,21 @@ function renderCalendar() {
 
     for (let i = 1; i <= daysInMonth; i++) {
         const dayElement = document.createElement('li');
-        dayElement.textContent = i;
+
+        const dateNumElement = document.createElement('p');
+        dateNumElement.classList.add('date-num');
+        dateNumElement.innerText = i;
+
+        dayElement.appendChild(dateNumElement);
         daysList.appendChild(dayElement);
+
+        if (
+            i === today.getDate() &&
+            currentDate.getMonth() === today.getMonth() &&
+            currentDate.getFullYear() === today.getFullYear()
+        ) {
+            dayElement.classList.add('today');
+        }
     }
 
     const remainingDays = (firstWeekDay + daysInMonth) % 7 === 0 ? 0 : 7 - ((firstWeekDay + daysInMonth) % 7);
@@ -43,15 +66,6 @@ function renderCalendar() {
             daysList.appendChild(emptyDayElement);
         }
     }
-
-    const today = new Date();
-    const days = document.querySelectorAll('.days li');
-
-    days.forEach(day => {
-        if (parseInt(day.textContent) === today.getDate() && currentDate.getMonth() === today.getMonth() && currentDate.getFullYear() === today.getFullYear()) {
-            day.classList.add('today');
-        }
-    });
 }
 
 function goToLastMonth() {
