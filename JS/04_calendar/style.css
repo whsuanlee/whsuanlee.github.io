@@ -109,7 +109,11 @@
     border: 2px solid #fff;
     padding-top: 10px;
 }
-
+/* .days li ul {
+    display: block;
+    color: #fff;
+    border: 0px;
+} */
 /* .days li:hover {
     background-color: #efebeb;
 } */
@@ -128,6 +132,10 @@
 
 }
 
+
+
+
+
 .add-icon {
     display: flex;
     align-items: center;
@@ -137,8 +145,8 @@
     height: 70px;
     right: 22px;
     bottom: 10px;
-    z-index: 99;  
-    float: right;
+    z-index: 1099;  
+    /* float: right; */
     position: fixed;
     font-size: 50px;
     padding: 10px 20px 20px 18px;
