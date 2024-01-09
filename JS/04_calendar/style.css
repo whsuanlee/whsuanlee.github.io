@@ -109,14 +109,39 @@
     border: 2px solid #fff;
     padding-top: 10px;
 }
-/* .days li ul {
+
+.days li ul {
     display: block;
+    text-align: start;
+    margin: 2px;
+    
+}
+
+.days li ul li {
+    /* border: none; */
+    width: 150px;
+    height: 30px;
+    text-align: start;
+    line-height: 5px;
+    /* background-color: #ff9eb6; */
+    border-radius: 10px;
+    border: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.days li ul li::before {
+    content: '✪ ';
+    color: #fff;;
+}
+
+.days li ul li:hover {
+    background-color: #ff9eb6;
     color: #fff;
-    border: 0px;
-} */
-/* .days li:hover {
-    background-color: #efebeb;
-} */
+}
+
+
 
 .today .date-num {
     color: #fff;

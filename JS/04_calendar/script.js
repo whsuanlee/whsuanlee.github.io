@@ -42,6 +42,16 @@ function createTodo() {
     closeModal('create_todo_modal'); // 關閉彈跳視窗
 }
 
+//.days li中的ul（即為代辦事項文字）加上class名稱為todo-txt
+// const dayElements = document.querySelectorAll('.days li');
+
+// dayElements.forEach(dayElement => {
+//     const ulElement = document.createElement('ul');
+//     ulElement.classList.add('todo-txt'); // 在這裡添加class名稱
+//     dayElement.appendChild(ulElement);
+// });
+
+
 
 //關閉彈跳視窗
 function closeModal(modalId) {
@@ -79,7 +89,7 @@ function renderCalendar() {
     }
 
     for (let i = 1; i <= daysInMonth; i++) {
-        const dayElement = document.createElement('li');
+        const dayElement = document.createElement('li'); 
 
         const dateNumElement = document.createElement('p');
         dateNumElement.classList.add('date-num');
@@ -169,7 +179,7 @@ function openCreateTodoModal(date) {
     const createTodoModal = new bootstrap.Modal(modal);
     createTodoModal.show();
 
-    document.querySelector('#create_todo_modal .btn-primary').addEventListener('click', () => {
+    document.querySelector('#create_todo_modal .btn-secondary').addEventListener('click', () => {
         const todoText = document.getElementById('todo_item_input').value;
         setTodoToStorage(date, todoText); // 將待辦事項保存到 localStorage
         renderCalendar(); // 重新渲染日曆以顯示新添加的待辦事項
