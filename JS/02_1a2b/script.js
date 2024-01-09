@@ -31,6 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
     restartBtn.disabled = false;
     showAnswerBtn.disabled = false;
     guessBtn.disabled = false;
+    guessInput.disabled = false;
+    
   }
 
   function restartGame() {
@@ -94,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
   restartBtn.disabled = true;
   showAnswerBtn.disabled = true;
   guessBtn.disabled = true;
+  guessInput.disabled = true;
 
   startBtn.addEventListener('click', startGame);
   restartBtn.addEventListener('click', restartGame);
