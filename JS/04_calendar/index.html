@@ -58,7 +58,7 @@
         ＋
     </button>
     
-  <!-- Modal -->
+  <!-- Create Modal -->
   <div class="modal fade create_todo_modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -84,35 +84,6 @@
       </div>
     </div>
   </div>
-
-
-  <!-- Create Modal -->
-  <div class="modal fade " id="create_todo_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">新增行程</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <div class="mb-3">
-                  <label for="date_input" class="form-label">日期</label>
-                  <input type="date" class="form-control" id="date_input" aria-describedby="datetimeHelp">
-                  <div id="datetimeHelp" class="form-text">請選擇日期.</div>
-              </div>
-              <div class="mb-3">
-                  <label for="todo_item_input" class="form-label">待辦事項</label>
-                  <textarea class="form-control" id="todo_item_input"></textarea>
-              </div>
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-              <button type="button" class="btn btn-primary" onclick="createTodo()">新增</button>
-          </div>
-      </div>
-  </div>
-</div>
 
 <!-- Update Modal -->
 <div class="modal fade update_todo_modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
