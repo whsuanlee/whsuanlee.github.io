@@ -62,15 +62,41 @@ function renderTodos() {
       }
     });
 
-    const delButton = document.createElement('button');
-    delButton.classList.add('btn', 'btn-secondary');
-    delButton.textContent = '刪除';
-    delButton.addEventListener('click', function() {
-      // 刪除待辦事項(索引值,刪除1個元素)，並重新render列表
-      todos.splice(index, 1);
-      saveTodos();
-      renderTodos();
-    });
+    // const delButton = document.createElement('button');
+    // delButton.classList.add('btn', 'btn-secondary');
+    // delButton.textContent = '刪除';
+    // delButton.addEventListener('click', function() {
+    //   // 刪除待辦事項(索引值,刪除1個元素)，並重新render列表
+    //   todos.splice(index, 1);
+    //   saveTodos();
+    //   renderTodos();
+    // });
+
+    // TODO: 以下將deleteTodo 抽 function
+    // 定義處理刪除按鈕點擊事件的函式
+    function handleDeleteButtonClick(index) {
+        // 刪除待辦事項(索引值,刪除1個元素)，並重新render列表
+        todos.splice(index, 1);
+        saveTodos();
+        renderTodos();
+    }
+    
+    // 創建刪除按鈕的函式
+    function createDeleteButton(index) {
+        const delButton = document.createElement('button');
+        delButton.classList.add('btn', 'btn-secondary');
+        delButton.textContent = '刪除';
+        delButton.addEventListener('click', function() {
+        // 調用處理刪除按鈕點擊事件的函式
+        handleDeleteButtonClick(index);
+        });
+    
+        return delButton;
+    }
+    
+    // 在使用 delButton 的地方調用 createDeleteButton 函式
+    const delButton = createDeleteButton(index);
+  
 
     // 將各個元素添加至代辦事項容器
     todoItem.append(checkBoxDiv);
