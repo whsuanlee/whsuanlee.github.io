@@ -190,3 +190,7 @@
     background-color: #585858;
     color: #fff;
 }
+
+.days .hide-excess-todos ul li:nth-child(n+3) {
+    display: none;
+}

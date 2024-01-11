@@ -80,8 +80,9 @@ function renderCalendar() {
             
             modalBody.innerHTML = '<ul>';
             if (todoItems && todoItems.length > 0) {
-                todoItems.forEach(item => {
-                    modalBody.innerHTML += `<li>${item}</li>`;
+                todoItems.forEach((item, index) => {
+                    const itemNumber = index + 1;
+                    modalBody.innerHTML += `<li> (${itemNumber}) ${item}</li>`;
                 });
             } else {
                 modalBody.innerHTML += '<li>沒有待辦事項</li>';
@@ -89,10 +90,6 @@ function renderCalendar() {
             modalBody.innerHTML += '</ul>';
     
             event.stopPropagation(); // 阻止事件冒泡(防止新增待辦事項視窗出現)
-            const moreTodoModal = new bootstrap.Modal(document.getElementById('more_todo_modal'));
-            moreTodoModal.show();
-
-            closeModal('create_todo_modal'); // 隱藏新增待辦事項的視窗
            
             
         });
@@ -138,6 +135,11 @@ function renderCalendar() {
 
                 todoList.appendChild(todoItem);
             }
+
+            // 隱藏超過三筆的待辦事項
+        if (todoItems.length > 2) {
+            dayElement.classList.add('hide-excess-todos');
+        }
             dayElement.appendChild(todoList);
         }
        
