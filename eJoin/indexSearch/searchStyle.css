@@ -249,6 +249,7 @@ img {
     }
 }
 
+/* media */
 @media screen and (min-width: 768px) and (max-width: 1199px) {
     .card-group {
         grid-template-columns: repeat(2, 1fr);
@@ -260,3 +261,123 @@ img {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* filter area */
+.filter-border {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction:column;
+    padding: 25px;
+    margin: auto;
+}
+
+.filter-title {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.filter-title .filter-close {
+    width: 20px;
+}
+
+.filter-title .filter-close:hover {
+    filter: brightness(120%) hue-rotate(200deg); 
+    cursor: pointer;
+    transition: .3s;
+}
+
+.filter-container {
+    box-sizing: border-box;
+}
+
+.filter-container .order-by {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filter-container .order-by h3 {
+    padding-right: 30px;
+}
+
+.filter-container .search-border {
+    display: flex;
+    align-items: center;
+    border: 1px solid #959ba1;
+    border-radius: 50px;
+    width: 330px;
+}
+.filter-container .order-by input {
+    margin-left: 20px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.filter-container .order-by input::placeholder {
+    color: #959ba1;
+    font-size: 15px;
+}
+
+.filter-container .search-border {
+    justify-content: space-between;
+}
+
+.filter-container .search-border a {
+    text-decoration: none;
+    
+    color: #9a9a9a;
+    padding-bottom: 10px;
+    font-size: 20px;
+    padding-right: 30px;
+}
+
+.filter-style {
+    margin: 20px 0;
+    border-top: .5px solid #b5bac1;
+    border-bottom: .5px solid #b5bac1;
+}
+
+.filter-style .price,
+.filter-style .filter-time {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; 
+}
+
+.filter-style .price h3,
+.filter-style .filter-time h3 {
+    padding-right: 20px;
+    margin-top: 10px;
+}
+
+.filter-style .tag-price-free,
+.filter-style .tag-price-pay,
+.filter-time .tag-time-today,
+.filter-time .tag-time-tomorrow,
+.filter-time .tag-time-week,
+.filter-time .tag-time-weekend,
+.filter-time .tag-time-next-week,
+.filter-time .tag-time-next-weekend,
+.filter-time .tag-time-customize {
+    background-color: #e7ecf3;
+    color: #959ba1;
+    border-radius: 15px;
+    padding: 3px 15px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    align-items: center;
+    display: flex;
+    
+}
+
