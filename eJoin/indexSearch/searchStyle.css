@@ -46,7 +46,7 @@ img {
     top: 0;
     background-color: #fff;
     box-shadow: 0px 0px 10px 0px #dedede;
-    z-index: 99;
+    z-index: 1;
 }
 
 .title-name {
@@ -81,7 +81,11 @@ img {
     background-color: #e4f0ff;
     transition: .3s;
 }
-
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 .search-bar input {
     margin-left: 40px;
     border: none;
@@ -96,7 +100,7 @@ img {
 
 .search-bar img {
     width: 35px;
-    padding: 10px;
+    padding: 10px 0;
     margin-left: 90px;
 }
 
@@ -108,18 +112,17 @@ img {
 
 .hashtag-area {
     margin-bottom: 30px;
-    overflow: scroll;
     padding: 20px 30px;
 }
 
 .tag-bar {
-    background-color: #e2e2e2;
+    background-color: #e2e3e6;
     border-radius: 40px;
     display: inline-block;
     white-space: nowrap;
     padding: 5px 15px;
     font-size: 13px;
-    color: #959ba1;
+    color: #717375;
     font-weight: 500;
     letter-spacing: 1px;
     margin-bottom: 10px;
@@ -243,25 +246,6 @@ img {
     padding: 30px 0;
 }
 
-@media screen and (max-width: 767px) {
-    .card-group {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-/* media */
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-    .card-group {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .card-group {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
 /* filter area */
 .filter-border {
     width: 400px;
@@ -271,8 +255,59 @@ img {
     display: flex;
     flex-direction:column;
     padding: 25px;
-    margin: auto;
+    margin-top: 5px;
+    animation: scaleIn 0.5s forwards;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    /* overflow-y: auto; */
 }
+
+@keyframes scaleIn {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+.choose-locate-area {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction:column;
+    padding: 25px;
+    margin-top: 5px;
+    animation: slideIn 0.3s ease forwards;
+    position: fixed;
+    /* right: 5px; */
+    /* transform: translate(-50%, -50%); */
+    /* animation: slideOut 0.3s forwards; */
+    display: none;
+    overflow-y: auto;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
 
 .filter-title {
     display: flex;
@@ -280,6 +315,11 @@ img {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
+}
+
+.locate-title .locate-title-txt {
+    display: flex;
+    align-items: center;
 }
 
 .filter-title .filter-close {
@@ -302,9 +342,9 @@ img {
     justify-content: space-between;
 }
 
-.filter-container .order-by h3 {
+/* .filter-container .order-by h3 {
     padding-right: 30px;
-}
+} */
 
 .filter-container .search-border {
     display: flex;
@@ -312,6 +352,7 @@ img {
     border: 1px solid #959ba1;
     border-radius: 50px;
     width: 330px;
+
 }
 .filter-container .order-by input {
     margin-left: 20px;
@@ -342,20 +383,38 @@ img {
 .filter-style {
     margin: 20px 0;
     border-top: .5px solid #b5bac1;
-    border-bottom: .5px solid #b5bac1;
+    /* border-bottom: .5px solid #b5bac1; */
 }
 
-.filter-style .price,
+.filter-time {
+    margin: 5px 0;
+    border-bottom: .5px solid #b5bac1;
+    padding-bottom: 10px;
+}
+
+.filter-time-item {
+    display: flex;
+    justify-content: flex-start; 
+    flex-wrap: wrap;
+}
+
+.filter-style .price {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center; 
+}
+
 .filter-style .filter-time {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center; 
+    flex-wrap: nowrap;
+    align-items: top; 
 }
 
 .filter-style .price h3,
 .filter-style .filter-time h3 {
     padding-right: 20px;
     margin-top: 10px;
+    white-space: nowrap;
 }
 
 .filter-style .tag-price-free,
@@ -377,7 +436,463 @@ img {
     font-size: 14px;
     margin-top: 10px;
     align-items: center;
+    display: flex;   
+}
+
+.filter-time .tag-time-customize {
     display: flex;
+    align-items: center;
+    flex-direction:column;
+    border: 1px solid #959ba1;
+    border-radius: 50px;
+    width: 325px;
+    background-color: #fff;
+    padding: 5px 0;
+}
+
+.search-border:hover,
+.filter-time .tag-time-customize:hover {
+    background-color: #d6ecff;
+    border: 1px solid #b7ddff ;
+    transition: .3s;
+}
+
+.filter-style .tag-price-free:hover,
+.filter-style .tag-price-pay:hover,
+.filter-time .tag-time-today:hover,
+.filter-time .tag-time-tomorrow:hover,
+.filter-time .tag-time-week:hover,
+.filter-time .tag-time-weekend:hover,
+.filter-time .tag-time-next-week:hover,
+.filter-time .tag-time-next-weekend:hover {
+    background-color: #d6ecff;
+    transition: .3s;
+}
+
+.theme {   
+    margin: 20px 0;
+}
+
+.tag-theme-area {
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.tag-theme-travel,
+.tag-theme-learn,
+.tag-theme-family,
+.tag-theme-business,
+.tag-theme-arts,
+.tag-theme-handmade,
+.tag-theme-food,
+.tag-theme-sports,
+.tag-theme-pet,
+.tag-theme-photography,
+.tag-theme-technology,
+.tag-theme-film,
+.tag-theme-entertainment,
+.tag-theme-design,
+.tag-theme-game,
+.tag-theme-music,
+.tag-theme-health,
+.tag-theme-startup,
+.tag-theme-investment,
+.tag-theme-blockchain,
+.tag-theme-fashion,
+.tag-theme-charitable{ 
+    display: flex; 
+    align-items: center; 
+    border: 1px solid #4d5e81;
+    border-radius: 50px;
+    padding: 5px 15px;
+    color: #4d5e81;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.tag-theme-travel:hover,
+.tag-theme-learn:hover,
+.tag-theme-family:hover,
+.tag-theme-business:hover,
+.tag-theme-arts:hover,
+.tag-theme-handmade:hover,
+.tag-theme-food:hover,
+.tag-theme-sports:hover,
+.tag-theme-pet:hover,
+.tag-theme-photography:hover,
+.tag-theme-technology:hover,
+.tag-theme-film:hover,
+.tag-theme-entertainment:hover,
+.tag-theme-design:hover,
+.tag-theme-game:hover,
+.tag-theme-music:hover,
+.tag-theme-health:hover,
+.tag-theme-startup:hover,
+.tag-theme-investment:hover,
+.tag-theme-blockchain:hover,
+.tag-theme-fashion:hover,
+.tag-theme-charitable:hover { 
+    cursor: pointer;
+    border: 1px solid #b7ddff;
+    background-color: #d6ecff;
+    transition: .3s;
+}
+
+.tag-theme-travel img,
+.tag-theme-learn img,
+.tag-theme-family img,
+.tag-theme-business img,
+.tag-theme-arts img,
+.tag-theme-handmade img,
+.tag-theme-food img,
+.tag-theme-sports img,
+.tag-theme-pet img,
+.tag-theme-photography img,
+.tag-theme-technology img,
+.tag-theme-film img,
+.tag-theme-entertainment img,
+.tag-theme-design img,
+.tag-theme-game img,
+.tag-theme-music img,
+.tag-theme-health img,
+.tag-theme-startup img, 
+.tag-theme-investment img,
+.tag-theme-blockchain img,
+.tag-theme-fashion img,
+.tag-theme-charitable img {
+    width: 20px;
+    padding-right: 5px;
+}
+
+.filter-location-btn {
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+    border: 1px solid #959ba1;
+    border-radius: 50px;
+    background-color: #fff;
+    padding: 5px 0;
+    margin: 10px 0;
+    color: #959ba1;
+}
+
+.filter-location-btn:hover {
+    background-color: #d6ecff;
+    border: 1px solid #b7ddff ;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.filter-location-txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.filter-submit-btn,
+.choose-locate-btn {
+    background: linear-gradient(to left, #80C3FF, #6D9FF4);
+    border-radius: 50px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 30px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.filter-submit-btn:hover,
+.choose-locate-btn:hover {
+    cursor: pointer;
+    background: linear-gradient(to left, #68b8ff, #68b8ff);
+    transition: .3s;
+}
+
+.filter-area {   
+    position: fixed; 
+    top: 0px; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(152, 152, 152, 0.5);
+    z-index: 9999; 
+    display: none; 
+    overflow-y: auto; 
+}
+
+.filter-area-flex {
+    display: flex;
+    justify-content: center;
+
     
 }
+
+.toggleFilter {
+    display: none;
+}
+
+/* 點擊篩選圖示會出現篩選選單 */
+.toggleFilter:checked ~ .filter-area {
+    display: block;
+}
+
+.toggleFilter:checked ~ .choose-locate-area {
+    display: block;
+}
+
+#toggleChooseLocate:checked ~ .filter-location-btn ~ .choose-locate-area {
+    display: block;
+}
+
+
+/* choose-locate-area */
+.locate-title {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.locate-title-txt {
+    display: flex;
+    align-items: center;
+}
+
+.locate-title-txt span {
+    margin-right: 15px;
+    color: #606062;
+    font-size: 25px;
+}
+
+.locate-title-txt span:hover {
+    cursor: pointer;
+    color: #959ba1;
+    transition: .3s;
+}
+
+.locate-title-txt span:checked ~ .choose-locate-area {
+    transform: translateX(-100%);
+  }
+
+.locate-reset {
+    font-size: 15px;
+    color: #606062;
+}
+
+.locate-reset:hover {
+    color: #959ba1;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.locate-taiwan {
+    padding: 30px 0;
+    border-top: .5px solid #959ba1;
+    border-bottom: .5px solid #959ba1;
+}
+
+.locate-north,
+.locate-central,
+.locate-south,
+.locate-east,
+.locate-singapore {
+    margin-top: 30px;
+}
+
+.locate-north h3,
+.locate-central h3,
+.locate-south h3,
+.locate-east h3 {
+    color: #959ba1;
+}
+
+.tag-taiwan,
+.tag-north,
+.tag-central,
+.tag-south,
+.tag-east,
+.tag-singapore{
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.tag-locate-taipei,
+.tag-locate-newTaipei,
+.tag-locate-taichung,
+.tag-locate-kaohsiung,
+.tag-locate-keelung,
+.tag-locate-taoyuan,
+.tag-locate-hsinchu,
+.tag-locate-miaoli,
+.tag-locate-nantou,
+.tag-locate-changhua,
+.tag-locate-yunlin,
+.tag-locate-chiayi,
+.tag-locate-tainan,
+.tag-locate-pingtung,
+.tag-locate-yilan,
+.tag-locate-hualien,
+.tag-locate-taitung,
+.tag-locate-penghu,
+.tag-locate-kinmen,
+.tag-locate-lianjiang,
+.tag-locate-singapore{
+    background-color: #e7ecf3;
+    color: #959ba1;
+    border-radius: 15px;
+    padding: 3px 15px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    align-items: center;
+    display: flex;   
+}
+
+.tag-locate-taipei:hover,
+.tag-locate-newTaipei:hover,
+.tag-locate-taichung:hover,
+.tag-locate-kaohsiung:hover,
+.tag-locate-keelung:hover,
+.tag-locate-taoyuan:hover,
+.tag-locate-hsinchu:hover,
+.tag-locate-miaoli:hover,
+.tag-locate-nantou:hover,
+.tag-locate-changhua:hover,
+.tag-locate-yunlin:hover,
+.tag-locate-chiayi:hover,
+.tag-locate-tainan:hover,
+.tag-locate-pingtung:hover,
+.tag-locate-yilan:hover,
+.tag-locate-hualien:hover,
+.tag-locate-taitung:hover,
+.tag-locate-penghu:hover,
+.tag-locate-kinmen:hover,
+.tag-locate-lianjiang:hover,
+.tag-locate-singapore:hover {
+    background-color: #d6ecff;
+    transition: .3s;
+}
+
+/* 767px以下 */
+@media screen and (max-width: 767px) {
+    .wrap {
+        padding: 30px 20px; 
+    }
+    .header-area img {
+        max-width: 60px; 
+    }
+    .search-area {
+        width: calc(100% - 40px);
+        margin: 0 20px 10px;
+    }
+    .search-bar input {
+        margin-left: 20px;
+    }
+    .search-bar img {
+        margin-left: 100px; 
+    }
+    .card-list .card-body {
+        padding: 10px;
+    }
+    .copy-right {
+        padding: 20px 0;
+    }
+
+    /* filter-border */
+    .filter-area {
+        overflow-y: auto;
+    }
+
+    .filter-border {
+        /* width: calc(100% - 70px); */
+        width: 300px;
+        /* margin: 10px 20px; */
+        overflow-y: auto;
+    }
+
+    .filter-container .search-border {
+        width: calc(100% - 70px);
+    }
+
+    .filter-time .tag-time-customize {
+        width: calc(100% - 10px);
+    }
+
+    .filter-submit-btn,
+    .filter-style, 
+    .theme {
+        margin-top: 5px;
+    }
+
+    .theme {
+        margin-bottom: 5px;
+    }
+
+    
+
+    .choose-locate-area {
+        /* width: calc(100% - 70px); */
+        width: 300px;
+        height: 93%;
+        display: flex;
+        display: none;    
+        overflow-y: auto;
+    }
+
+    .locate-singapore {
+        flex-grow: 1;
+    }
+}
+
+/* 平板 768px - 1199px */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .wrap {
+        padding: 30px 50px; 
+    }
+    .header-area img {
+        max-width: 70px; 
+    }
+    .search-area {
+        width: 350px; 
+    }
+    .search-bar input {
+        margin-left: 30px;
+    }
+    .search-bar img {
+        margin-left: 90px;
+    }
+}
+
+/* 1200px 以上 */
+@media screen and (min-width: 1200px) {
+    .wrap {
+        padding: 30px 100px; 
+    }
+    .header-area img {
+        max-width: 80px;
+    }
+    .search-area {
+        width: 350px;
+    }
+    .search-bar input {
+        margin-left: 40px; 
+    }
+    .search-bar img {
+        margin-left: 90px; 
+    }
+    .card-group {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+    .copy-right {
+        padding: 30px 0; 
+    }
+}
+
 
