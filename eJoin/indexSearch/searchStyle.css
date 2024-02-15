@@ -249,8 +249,8 @@ img {
 /* filter area */
 .filter-border {
     position: absolute;
-    width: 400px;
-    height: 90%;
+    width: 40%;
+    height: 690px;
     background-color: #fff;
     border-radius: 30px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -275,8 +275,8 @@ img {
 
 .choose-locate-area {
     position: absolute;
-    width: 400px;
-    height: 90%;
+    width: 40%;
+    /* height: 100%; */
     background-color: #fff;
     border-radius: 30px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -315,14 +315,14 @@ img {
 
 @keyframes slideOut {
     0% {
-      transform: translateX(0);
-      opacity: 1;
+     transform: translateX(0);
+     opacity: 1;
     }
     100% {
       transform: translateX(-100%);
       opacity: 0;
     }
-  }
+}
 
 .filter-title {
     display: flex;
@@ -366,9 +366,10 @@ img {
     align-items: center;
     border: 1px solid #959ba1;
     border-radius: 50px;
-    width: 330px;
-
+    /* width: 330px; */
+    width: calc(100% - 70px);
 }
+
 .filter-container .order-by input {
     margin-left: 20px;
     padding: 10px;
@@ -460,7 +461,8 @@ img {
     flex-direction:column;
     border: 1px solid #959ba1;
     border-radius: 50px;
-    width: 325px;
+    /* width: 325px; */
+    width: calc(100% - 10px);
     background-color: #fff;
     padding: 5px 0;
 }
@@ -516,7 +518,7 @@ img {
 .tag-theme-investment,
 .tag-theme-blockchain,
 .tag-theme-fashion,
-.tag-theme-charitable{ 
+.tag-theme-charitable { 
     display: flex; 
     align-items: center; 
     border: 1px solid #4d5e81;
@@ -673,7 +675,7 @@ img {
 
 .locate-title-txt span:checked ~ .choose-locate-area {
     transform: translateX(-100%);
-  }
+}
 
 .locate-reset {
     font-size: 15px;
@@ -810,15 +812,6 @@ img {
     .filter-area {
         overflow-y: auto;
     }
-
-    .filter-border {
-        /* width: calc(100% - 70px); */
-        width: 300px;
-        /* margin: 10px 20px; */
-        overflow-y: auto;
-        height: 90vh;
-    }
-
     .filter-container .search-border {
         width: calc(100% - 70px);
     }
@@ -835,22 +828,14 @@ img {
     .theme {
         margin-bottom: 5px;
     }
-    .choose-locate-area {
-        /* width: calc(100% - 70px); */
-        width: 300px;
-        /* height: 88%; */
-        /* display: flex; */
-        /* display: none;     */
-        overflow-y: auto;
-        height: 90vh;
-    }
     .locate-singapore {
         flex-grow: 1;
     }
     .filter-border,
     .choose-locate-area {
-        width: 300px;
+        width: 80%;
         height: 90%;
+        overflow-y: auto;
     }
 }
 
@@ -871,18 +856,27 @@ img {
     .search-bar img {
         margin-left: 90px;
     }
+    .filter-container .search-border {
+        width: calc(100% - 70px);
+    }
     .card-group {
         grid-template-columns: repeat(2, 1fr); 
     }
     .filter-flex {
         width: 80%;
     }
-    .filter-border,
+    .filter-border {
+        width: 60%;
+        height: 690px;
+        overflow-y: auto;
+    }
+
     .choose-locate-area {
-        height: 75%;
+        width: 60%;
+        height: auto;
+        overflow-y: auto;
     } 
-
-
+}
 /* 1200px 以上 */
 @media screen and (min-width: 1200px) {
     .wrap {
@@ -900,12 +894,24 @@ img {
     .search-bar img {
         margin-left: 90px; 
     }
+    .filter-container .search-border {
+        width: calc(100% - 70px);
+    }
     .card-group {
         grid-template-columns: repeat(3, 1fr); 
     }
     .copy-right {
         padding: 30px 0; 
     }
+    .filter-border {
+        width: 60%;
+        height: 690px;
+        overflow-y: auto;
+    }
+
+    .choose-locate-area {
+        width: 60%;
+        height: auto;
+        overflow-y: auto;
+    } 
 }
-
-
