@@ -141,7 +141,7 @@ img {
 
 .card-group {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(3, 1fr));
+    grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
 }
 
@@ -248,7 +248,9 @@ img {
 
 /* filter area */
 .filter-border {
+    position: absolute;
     width: 400px;
+    height: 90%;
     background-color: #fff;
     border-radius: 30px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -259,55 +261,68 @@ img {
     animation: scaleIn 0.5s forwards;
     position: fixed;
     transform: translate(-50%, -50%);
-    /* overflow-y: auto; */
+    overflow-y: auto;
 }
 
 @keyframes scaleIn {
     0% {
-        transform: scale(0);
+      transform: scale(0);
     }
     100% {
-        transform: scale(1);
+      transform: scale(1);
     }
-}
+  }
 
 .choose-locate-area {
+    position: absolute;
     width: 400px;
+    height: 90%;
     background-color: #fff;
     border-radius: 30px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
+    /* display: flex; */
     flex-direction:column;
     padding: 25px;
     margin-top: 5px;
-    animation: slideIn 0.3s ease forwards;
+    animation: slideIn 0.5s ease forwards;
+
     position: fixed;
     /* right: 5px; */
     /* transform: translate(-50%, -50%); */
     /* animation: slideOut 0.3s forwards; */
     display: none;
     overflow-y: auto;
+    left: 0x;
+    top: 0px;
+    z-index: 99;
+    /* overflow: hidden; */
 }
+
+.slide-out {
+    animation: slideOut 0.5s forwards;
+}
+
+
 
 @keyframes slideIn {
     0% {
         transform: translateX(100%);
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(0%);
     }
 }
 
 @keyframes slideOut {
     0% {
-        transform: translateX(0);
-        opacity: 1;
+      transform: translateX(0);
+      opacity: 1;
     }
     100% {
-        transform: translateX(-100%);
-        opacity: 0;
+      transform: translateX(-100%);
+      opacity: 0;
     }
-}
+  }
 
 .filter-title {
     display: flex;
@@ -610,7 +625,8 @@ img {
     transition: .3s;
 }
 
-.filter-area {   
+.filter-area { 
+    position: relative;  
     position: fixed; 
     top: 0px; 
     left: 0; 
@@ -619,32 +635,14 @@ img {
     background-color: rgba(152, 152, 152, 0.5);
     z-index: 9999; 
     display: none; 
-    overflow-y: auto; 
+    overflow-y: auto;
 }
 
 .filter-area-flex {
     display: flex;
     justify-content: center;
-
-    
 }
 
-.toggleFilter {
-    display: none;
-}
-
-/* 點擊篩選圖示會出現篩選選單 */
-.toggleFilter:checked ~ .filter-area {
-    display: block;
-}
-
-.toggleFilter:checked ~ .choose-locate-area {
-    display: block;
-}
-
-#toggleChooseLocate:checked ~ .filter-location-btn ~ .choose-locate-area {
-    display: block;
-}
 
 
 /* choose-locate-area */
@@ -798,6 +796,9 @@ img {
     .search-bar img {
         margin-left: 100px; 
     }
+    .card-group {
+        grid-template-columns: repeat(1, 1fr); 
+    }
     .card-list .card-body {
         padding: 10px;
     }
@@ -815,6 +816,7 @@ img {
         width: 300px;
         /* margin: 10px 20px; */
         overflow-y: auto;
+        height: 90vh;
     }
 
     .filter-container .search-border {
@@ -830,22 +832,25 @@ img {
     .theme {
         margin-top: 5px;
     }
-
     .theme {
         margin-bottom: 5px;
-    }  
-
+    }
     .choose-locate-area {
         /* width: calc(100% - 70px); */
         width: 300px;
-        height: 93%;
-        display: flex;
-        display: none;    
+        /* height: 88%; */
+        /* display: flex; */
+        /* display: none;     */
         overflow-y: auto;
+        height: 90vh;
     }
-
     .locate-singapore {
         flex-grow: 1;
+    }
+    .filter-border,
+    .choose-locate-area {
+        width: 300px;
+        height: 90%;
     }
 }
 
@@ -866,13 +871,19 @@ img {
     .search-bar img {
         margin-left: 90px;
     }
-
     .card-group {
         grid-template-columns: repeat(2, 1fr); 
     }
-}
+    .filter-flex {
+        width: 80%;
+    }
+    .filter-border,
+    .choose-locate-area {
+        height: 75%;
+    } 
 
-/* 1200px 以上  */
+
+/* 1200px 以上 */
 @media screen and (min-width: 1200px) {
     .wrap {
         padding: 30px 100px; 

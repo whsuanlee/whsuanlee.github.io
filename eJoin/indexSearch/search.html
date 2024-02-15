@@ -28,7 +28,7 @@
             <div class="search-bar">
                 <input type="search" placeholder="輸入關鍵字...">
                 <input type="radio" name="filterInput" value="0" class="filter-check" checked hidden />
-                <label for="toggleFilter" class="filterIcon"><img src="./img/filter1.png"></label>
+                <label class="filterIcon" onclick="openFilterAreaPopup()"><img src="./img/filter1.png"></label>
             </div>
 
         </div>
@@ -125,17 +125,13 @@
         </div>
     </footer>
 
-    <!-- filter area -->
-    <input type="checkbox" class="toggleFilter" id="toggleFilter">
-    <label for="toggleFilter" class="search-bar">
-</label>
-    <div class="filter-area">
+    </label>
+    <div class="filter-area" id="filter-area-popup">
         <div class="filter-area-flex">
             <div class="filter-border">
                 <div class="filter-title">
                     <h2>篩選</h2>
-                    <input type="checkbox" class="toggleFilter">
-                    <label for="toggleFilter" class="filter-close">
+                    <label class="filter-close" onclick="closeFilterAreaPopup()">
                         <img class="filter-close" src="./img/close.png" alt="">
                     </label>
                 </div>
@@ -257,9 +253,8 @@
                     </div>
                     <div class="filter-location">
                         <h3>地點</h3>
-                        <div class="filter-location-btn"> 
-                            <label for="toggleChooseLocate" class="filter-location-txt">全部</label>       
-                            
+                        <div class="filter-location-btn" onclick="showLocateArea()">
+                            <label class="filter-location-txt">全部</label>
                             <!-- <p class="filter-location-txt">全部</p> -->
                         </div>
                     </div>
@@ -271,10 +266,10 @@
                 </div>
             </div>
             <!-- choose locate area -->
-            <div class="choose-locate-area">
+            <div class="choose-locate-area" id="choose-locate-area">
                 <div class="locate-title">
                     <div class="locate-title-txt">
-                        <label for="hideChooseLocateCheckbox"><span>←</span></label>
+                        <label onclick="hideLocateArea()"><span>←</span></label>
                         <h2>地點</h2>
                     </div>
                     <span class="locate-reset">重設</span>
@@ -335,11 +330,27 @@
                         <p>確定</p>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
+    <script type="text/javascript">
+        function openFilterAreaPopup() {
+            document.getElementById("filter-area-popup").style.display = "block";
+        }
 
-    
+        function closeFilterAreaPopup() {
+            document.getElementById("filter-area-popup").style.display = "none";
+        }
+
+        function showLocateArea() {
+            document.getElementById("choose-locate-area").style.display = "block";
+        }
+
+        function hideLocateArea() {
+            document.getElementById("choose-locate-area").style.display = "none";
+        }
+
+    </script>
 </body>
 
 </html>

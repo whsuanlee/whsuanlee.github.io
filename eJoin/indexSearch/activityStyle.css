@@ -301,7 +301,7 @@ img {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .would-like-title {
@@ -314,14 +314,20 @@ img {
     white-space: nowrap;
 }
 
-.owl-carousel {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.owl-carousel .owl-item img {
+    width: 13px;
+}
+
+.owl-carousel .owl-stage {
+    white-space: nowrap;
+}
+
+.card-group {
+    white-space: nowrap;
 }
 
 .card-list {
-    box-shadow: 3px 3px 10px 3px #dedede;
+    box-shadow: 1px -1px 8px 0px #dedede;
     border-radius: 30px;
     box-sizing: border-box;
     overflow: hidden;
@@ -333,7 +339,7 @@ img {
 
 .card-list:hover {
     transform: translateY(-3px); 
-    box-shadow: 3px 3px 30px 3px #dedede;
+    box-shadow: -1px 3px 6px 0px #dedede;
 }
 
 .card-list .card-img {
@@ -367,7 +373,7 @@ img {
     color: #333;
     text-decoration: none;
     display: -webkit-box;
-    -webkit-line-clamp: 2; 
+    -webkit-line-clamp: 1; 
     -webkit-box-orient: vertical;  
     overflow: hidden;
 }
@@ -384,6 +390,10 @@ img {
     text-decoration: none;
     margin-top: 10px;
     align-items: center;
+}
+
+.card-list .location-tag img {
+    width: 25px;
 }
 
 .card-list .location:hover {
@@ -421,6 +431,9 @@ img {
 
 /* 767px以下 */
 @media screen and (max-width: 767px) {
+    body{
+        margin-bottom: 60px;
+    }
     .wrap {
         padding: 30px 20px; 
     }
@@ -547,7 +560,11 @@ img {
     }
     .sign-up-btn-mobile:hover {
         background: linear-gradient(to left, #68b8ff, #68b8ff);
-    }   
+    } 
+    
+    .card-group {
+        margin-bottom: 30px;
+    }
 
 }
 
